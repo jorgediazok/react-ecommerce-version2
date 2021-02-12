@@ -1,9 +1,12 @@
 import './App.css';
 
+//Components
+import Product from './components/Product';
+
 function App() {
   return (
     <div className="app">
-      <h1>first commit</h1>
+      <Product />
     </div>
   );
 }
