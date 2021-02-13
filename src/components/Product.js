@@ -9,14 +9,16 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { AddShoppingCart } from '@material-ui/icons';
+import accounting from 'accounting';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+  },
+  action: {
+    marginTop: '1rem',
   },
   media: {
     height: 0,
@@ -31,9 +33,6 @@ const useStyles = makeStyles((theme) => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
   },
 }));
 
@@ -55,10 +54,10 @@ export default function Product() {
             className={classes.action}
             variant="h5"
             color="textSecondary">
-            {50}
+            {accounting.formatMoney(50, '€')}
           </Typography>
         }
-        title="Shoes"
+        title="Nike Shoes"
         subheader="in Stock"
       />
       <CardMedia
