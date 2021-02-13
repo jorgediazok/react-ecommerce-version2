@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import logo from '../assets/logo.png';
 import { Badge, Button } from '@material-ui/core';
-import { Menu, ShoppingCart } from '@material-ui/icons';
+import { ShoppingCart } from '@material-ui/icons';
 import { Link, useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({

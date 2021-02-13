@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Product() {
+export default function Product({ product }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -54,7 +54,7 @@ export default function Product() {
             className={classes.action}
             variant="h5"
             color="textSecondary">
-            {accounting.formatMoney(50, '€')}
+            {accounting.formatMoney(product.price, '$')}
           </Typography>
         }
         title="Nike Shoes"
@@ -62,19 +62,19 @@ export default function Product() {
       />
       <CardMedia
         className={classes.media}
-        image="https://s2.r29static.com/bin/entry/ebd/0,675,2000,1050/x,80/1929471/image.jpg"
-        title="Nike Shoes"
+        image={product.image}
+        title={product.name}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Running Shoes
+          {product.productType}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="Add to Cart" onClick={addToBasket}>
           <AddShoppingCart fontSize="large" />
         </IconButton>
-        {Array(4)
+        {Array(product.rating)
           .fill()
           .map((_, i) => (
             <p>&#11088;</p>
@@ -91,7 +91,7 @@ export default function Product() {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Training shoes for running.</Typography>
+          <Typography paragraph>{product.description}</Typography>
         </CardContent>
       </Collapse>
     </Card>
