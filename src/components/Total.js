@@ -1,6 +1,7 @@
 import React from 'react';
 import accounting from 'accounting';
 import { useStateValue } from '../StateProvider';
+import { getBasketTotal } from '../reducer';
 import { Button, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +24,7 @@ const Total = () => {
   return (
     <div className={classes.root}>
       <h5>Total items: {basket?.length}</h5>
-      <h5>{accounting.formatNumber(50, '$')}</h5>
+      <h5>{accounting.formatNumber(getBasketTotal(basket), '$')}</h5>
       <Button className={classes.button} variant="contained" color="secondary">
         Check Out
       </Button>
