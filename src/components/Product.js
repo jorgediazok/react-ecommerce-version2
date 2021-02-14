@@ -57,7 +57,7 @@ export default function Product({ product }) {
             {accounting.formatMoney(product.price, '$')}
           </Typography>
         }
-        title="Nike Shoes"
+        title={product.name}
         subheader="in Stock"
       />
       <CardMedia

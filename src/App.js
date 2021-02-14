@@ -5,13 +5,23 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import CheckoutPage from './components/CheckoutPage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <CheckoutPage />
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <Switch>
+          <Route path="/checkout-page">
+            <CheckoutPage />
+          </Route>
+          <Route path="/">
+            <Products />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
