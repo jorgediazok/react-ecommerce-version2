@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import CheckoutCard from './CheckoutCard';
 import products from '../product-data';
-import Product from './Product';
 import Total from './Total';
 
 const useStyles = makeStyles((theme) => ({
