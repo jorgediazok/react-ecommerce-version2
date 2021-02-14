@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import { useStateValue } from '../StateProvider';
 import { Delete } from '@material-ui/icons';
 import accounting from 'accounting';
 
@@ -30,15 +31,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CheckoutCard({ product }) {
+export default function CheckoutCard({
+  product: { id, name, image, price, rating },
+}) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  const addToBasket = () => {};
+  const [{ basket }, dispatch] = useStateValue();
 
   return (
     <Card className={classes.root}>
@@ -48,21 +45,17 @@ export default function CheckoutCard({ product }) {
             className={classes.action}
             variant="h5"
             color="textSecondary">
-            {accounting.formatMoney(product.price, '$')}
+            {accounting.formatMoney(price, '$')}
           </Typography>
         }
-        title="Nike Shoes"
+        title={name}
         subheader="in Stock"
       />
-      <CardMedia
-        className={classes.media}
-        image={product.image}
-        title={product.name}
-      />
+      <CardMedia className={classes.media} image={image} title={name} />
 
       <CardActions disableSpacing className={classes.cardActions}>
         <div className={classes.cardRating}>
-          {Array(product.rating)
+          {Array(rating)
             .fill()
             .map((_, i) => (
               <p>&#11088;</p>
