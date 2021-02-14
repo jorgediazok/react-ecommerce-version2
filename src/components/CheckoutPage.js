@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core';
 import CheckoutCard from './CheckoutCard';
 import products from '../product-data';
 import Product from './Product';
+import Total from './Total';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,7 +42,7 @@ const CheckoutPage = () => {
         </Grid>
         <Grid item xs={12} sm={4} md={3}>
           <Typography align="center" gutterBottom variant="h4">
-            Total
+            <Total />
           </Typography>
         </Grid>
       </Grid>
