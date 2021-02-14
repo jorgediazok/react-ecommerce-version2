@@ -43,6 +43,50 @@ const products = [
     description:
       'PC or Mac. Pepsi or Coke. Xbox or…that other console. It isn’t always easy to show your allegiances, especially when you’re bundled up for the holidays, but this jumper will let you make it abundantly clear what type of games you want to find under your tree.',
   },
+  {
+    id: 5,
+    name: 'River T-Shirt',
+    productType: 'Football Shirts',
+    price: 70,
+    rating: 5,
+    image:
+      'https://www.stockcenter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwfaa45235/products/AD_FM1180/AD_FM1180-1.JPG',
+    description:
+      'A football shirt from the best team in the world. Ready to hit the peach and score many goals? So this one is for you. Adidas high quality.',
+  },
+  {
+    id: 6,
+    name: 'Rollers',
+    productType: 'Outdoors Sports Rollers',
+    price: 120,
+    rating: 4,
+    image:
+      'https://http2.mlstatic.com/D_NQ_NP_903266-MLA43643610643_102020-O.webp',
+    description:
+      'If you want to go outside and surprise all your friends with your skating skills, just buy these magnificent rollers for practicing it.',
+  },
+  {
+    id: 7,
+    name: 'Playstation 5',
+    productType: 'Videogames Consoles',
+    price: 199,
+    rating: 5,
+    image:
+      'https://larepublica.pe/resizer/H7mmubPgRkCaGxOB1FnqepHiiv8=/1250x735/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/7SZL3UQ24RER3NBY3QN5BGKYSE.png',
+    description:
+      'Join the newest console from Sony. Ready to play the latest videogames in the industry. Enjoy online with your friends and have a lots of fun.',
+  },
+  {
+    id: 8,
+    name: 'Bycicle',
+    productType: 'Mountain Bike',
+    price: 119,
+    rating: 3,
+    image:
+      'https://http2.mlstatic.com/D_NQ_NP_874989-MLA43417836133_092020-O.webp',
+    description:
+      'An amazing bike to enjoy in the nature and spend hours on open air. Make exercise, chill your mind, relax, and feel free to try all kind of tricks with this wonderful resistent bike.',
+  },
 ];
 
 export default products;

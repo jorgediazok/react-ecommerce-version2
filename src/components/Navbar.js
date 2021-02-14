@@ -43,7 +43,9 @@ const Navbar = () => {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu">
-            <img src={logo} alt="logo" className={classes.image} />
+            <Link to="/">
+              <img src={logo} alt="logo" className={classes.image} />
+            </Link>
           </IconButton>
           <div className={classes.grow} />
           <Typography variant="h6" color="textPrimary" component="p">
@@ -55,7 +57,9 @@ const Navbar = () => {
             </Button>
             <IconButton aria-label="show cart items" color="inherit">
               <Badge badgeContent={2} color="secondary">
-                <ShoppingCart fontSize="large" color="primary" />
+                <Link to="/checkout-page">
+                  <ShoppingCart fontSize="large" color="primary" />
+                </Link>
               </Badge>
             </IconButton>
           </div>

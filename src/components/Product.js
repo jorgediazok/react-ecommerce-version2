@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+    cursor: 'pointer',
+  },
+  description: {
+    textAlign: 'justify',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -91,7 +95,9 @@ export default function Product({ product }) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{product.description}</Typography>
+          <Typography paragraph className={classes.description}>
+            {product.description}
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>
