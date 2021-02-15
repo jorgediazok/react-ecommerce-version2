@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Products from './components/Products';
 import CheckoutPage from './components/CheckoutPage';
 import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       <div className="app">
         <Navbar />
         <Switch>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
           <Route path="/signin">
             <SignIn />
           </Route>
