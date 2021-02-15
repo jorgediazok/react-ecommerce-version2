@@ -8,6 +8,7 @@ import logo from '../assets/logo.png';
 import { Badge, Button } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import { useStateValue } from '../StateProvider';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const classes = useStyles();
+  const history = useHistory();
   const [{ basket }, dispatch] = useStateValue();
 
   return (
@@ -53,7 +55,7 @@ const Navbar = () => {
             Hello Guest
           </Typography>
           <div className={classes.button}>
-            <Button variant="outlined">
+            <Button variant="outlined" onClick={() => history.push('/signin')}>
               <strong>Sign In</strong>
             </Button>
             <Link to="checkout-page">

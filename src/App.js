@@ -6,6 +6,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import CheckoutPage from './components/CheckoutPage';
+import SignIn from './components/SignIn';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <div className="app">
         <Navbar />
         <Switch>
+          <Route path="/signin">
+            <SignIn />
+          </Route>
           <Route path="/checkout-page">
             <CheckoutPage />
           </Route>
