@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
+import { auth } from '../firebase';
 import Container from '@material-ui/core/Container';
 
 function Copyright() {
@@ -51,6 +52,22 @@ export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const signin = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth);
+        if (auth) {
+          history.push('/');
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -63,6 +80,8 @@ export default function SignIn() {
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             variant="outlined"
             margin="normal"
             required
@@ -74,6 +93,8 @@ export default function SignIn() {
             autoFocus
           />
           <TextField
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             variant="outlined"
             margin="normal"
             required
@@ -89,6 +110,7 @@ export default function SignIn() {
             label="Remember me"
           />
           <Button
+            onClick={signin}
             type="submit"
             fullWidth
             variant="contained"
