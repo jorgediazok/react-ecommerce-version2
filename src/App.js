@@ -11,13 +11,14 @@ import Products from './components/Products';
 import CheckoutPage from './components/CheckoutPage';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import Checkout from './components/CheckoutForm/Checkout';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log(authUser);
       if (authUser) {
         dispatch({
           type: actionTypes.SET_USER,
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/checkout-page">
             <CheckoutPage />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
           <Route path="/">
             <Products />

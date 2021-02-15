@@ -96,7 +96,7 @@ export default function Product({
         {Array(rating)
           .fill()
           .map((_, i) => (
-            <p>&#11088;</p>
+            <p key={i}>&#11088;</p>
           ))}
         <IconButton
           className={clsx(classes.expand, {

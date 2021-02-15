@@ -52,6 +52,7 @@ export default function SignUp() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
 
   const signup = (e) => {
     e.preventDefault();
@@ -80,6 +81,8 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
