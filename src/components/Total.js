@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: '20vh',
   },
+  price: {
+    marginTop: '10px',
+  },
   button: {
     marginTop: '2rem',
   },
@@ -24,7 +27,9 @@ const Total = () => {
   return (
     <div className={classes.root}>
       <h5>Total items: {basket?.length}</h5>
-      <h5>{accounting.formatNumber(getBasketTotal(basket), '$')}</h5>
+      <h5 className={classes.price}>
+        $ {accounting.formatNumber(getBasketTotal(basket), '$')}
+      </h5>
       <Button className={classes.button} variant="contained" color="secondary">
         Check Out
       </Button>
